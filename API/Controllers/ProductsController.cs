@@ -45,7 +45,7 @@ namespace API.Controllers
 
             var countSpec = new ProductWithFiltersForCountSpecification(productSpecParams);
 
-            var totalItems = await _productRepository.CountAsync(spec);
+            var totalItems = await _productRepository.CountAsync(countSpec);
 
             var products = await _productRepository.ListAsync(spec);
 
