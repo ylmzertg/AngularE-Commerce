@@ -1,0 +1,20 @@
+<div class="bg-light px-4 text-uppercase font-weight-bold" style="padding: 1.20em;">
+    Sipariş Detay
+</div>
+<div class="p-4">
+    <p class="font-italic mb-4">Ödeme sırasında yapılan seçimlere bağlı olarak nakliye ücretleri eklenecektir</p>
+    <ul class="list-unstyled mb-4" *ngIf="basketTotal!=null">
+        <li class="d-flex justify-content-between py-3 border-bottom">
+            <strong class="text-muted">Sİpariş Dip Toplam</strong>
+            <strong>{{basketTotal.subTotal | currency}}</strong>
+        </li>
+        <li class="d-flex justify-content-between py-3 border-bottom">
+            <strong class="text-muted">Nakliye Ücreti</strong>
+            <strong>{{basketTotal.shipping | currency}}</strong>
+        </li>
+        <li class="d-flex justify-content-between py-3 border-bottom">
+            <strong class="text-muted">Toplam</strong>
+            <strong>{{basketTotal.total| currency}}</strong>
+        </li>
+    </ul>
+</div>
