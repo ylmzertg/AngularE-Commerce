@@ -9,6 +9,7 @@ import {ToastrModule} from 'ngx-toastr';
 import {BreadcrumbModule} from 'xng-breadcrumb';
 import { SectionHeaderComponent } from './section-header/section-header.component';
 import { from } from 'rxjs';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -18,6 +19,7 @@ import { from } from 'rxjs';
     CommonModule,
     RouterModule,
     BreadcrumbModule,
+    SharedModule,
     ToastrModule.forRoot({
       positionClass: 'toastr-bottom-right',
       preventDuplicates : true,

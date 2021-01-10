@@ -1,0 +1,38 @@
+<div class="d-flex justify-content-center mt-5">
+    <div class="col-3">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form-signin">
+            <div class="text-center mb-4">
+                <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+            </div>
+            <div class="form-label-group">
+                <label for="inputEmail" class="visually-hidden">Email address</label>
+                <input formControlName="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" >
+                <span class="text-danger" *ngIf="loginForm.get('email').invalid && loginForm.get('email').touched && loginForm.get('email').errors['required']">
+                    Email address is required
+                </span>
+                <span class="text-danger" *ngIf="loginForm.get('email').invalid && loginForm.get('email').touched && loginForm.get('email').errors['pattern']">
+                    Email address is not valid
+                </span>
+            </div>
+            <br>
+            <div class="form-label-group">
+                <label for="inputPassword" class="visually-hidden">Password</label>
+                <input formControlName="password" type="password" id="inputPassword" class="form-control" placeholder="Password">
+                <span class="text-danger" *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched && loginForm.get('password').errors['required']">
+                    Password address is required
+                </span>
+            </div>
+            <button [disabled]="loginForm.invalid"  class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+          </form>
+    </div>
+<!-- <div class="col-5">
+    <p>Form Status: {{loginForm.status}} </p>
+    <p>Email Status: {{loginForm.get('email').status}} </p>
+    <p>Email Touched: {{loginForm.get('email').touched}} </p>
+    <p>Email Dirty: {{loginForm.get('email').dirty}} </p>
+    <p> {{loginForm.value |json}} </p>
+</div> -->
+
+
+</div>
+
